@@ -1,0 +1,63 @@
+""" DEL 1D
+
+'Lad listen S være tom til at starte med. Der indsættes 
+herefter n heltal. Et af gangen. Når det sidste heltal 
+er indsat vil S være en sorteret liste bestående af de 
+n indsatte tal. Argumentér for at vi på denne måde har 
+sorteret n tal i O(n^2) tid.
+
+S er en tom liste der vil indeholde n antal noder.
+
+Der indsættes n antal noder i den tomme liste.'
+
+"""
+"""
+emptyList()
+   S = new List{head = nil, size = 0}
+   return S
+
+function makeNode(val)
+  node = new Node{prev = NIL, key = val, next = NIL}
+  return node
+
+function InsertAtEnd(n)
+
+    // Call and create an empty list, S
+    emptyList()
+    
+    // Allocate memory here.
+
+    // Make a temporay variable which we will use later
+    temp = ''
+
+    // If our list is empty, make the first node.
+    if S.head == nil then
+        S.head = makeNode(1)
+
+    // Iterate from 1 to n
+    for i = 2 to n
+
+        // Make a new node with NewNode.key = i
+        newNode = makeNode(i)
+
+        // While next node is not nil, keep going
+        while temp.next != nil do
+            temp = temp.next
+        
+        // Now we are at the end
+        // And we will now  we assign temp.next as our newNode
+        temp.next = NewNode
+        newNode.prev = temp
+        
+        printfn "Success!"
+
+
+Both our for loop and our nested while loop runs in 
+O(n) time.
+So we have have O(n*n) = O(n^2)
+
+
+MERE PÅ HER!!!
+
+
+"""

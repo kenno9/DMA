@@ -1,0 +1,20 @@
+""" DEL 1C
+
+'Argumentér for at din funktion i værste fald bruger Θ(n) tid 
+på indsættelse af et enkelt element, hvor n er antallet af 
+tal i listen.'
+
+    Funktionen har et while loop som først stopper når det har 
+    fundet sin placering. 
+    Sagt med andre ord bliver while loopet ved med at iterere
+    over nodernes keys, indtil z er større end den fundne
+    key. 
+
+    I værste fald vil z skulle placeres bagerst i listen, 
+    hvilket svarer til O(n). 
+
+    Men da z i alle andre tilfælde placeres forrest 
+    eller inde i listen, vil den gennemsnitlige placering 
+    blive betragtet i Theta(n) tid. 
+
+"""

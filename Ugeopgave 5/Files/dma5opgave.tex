@@ -1,0 +1,122 @@
+\documentclass[12pt,a4paper]{article}
+
+% Packages
+\usepackage[english,danish]{babel}
+\usepackage[applemac]{inputenc}
+\usepackage{amsmath,amscd}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{graphicx}                    
+\usepackage{framed}  
+\usepackage{xcolor}
+
+\theoremstyle{plain}
+\newtheorem{thm}{S¾tning}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Korollar}
+\newtheorem{conj}[thm]{Formodning}
+\theoremstyle{definition}
+\newtheorem{exercise}{Opgave}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{prob}[thm]{Problem}
+\newtheorem{remark}[thm]{Bem¾rkning}
+\newtheorem{example}[thm]{Eksempel}
+
+
+% Blackboard bold
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\GCD}{\operatorname{GCD}}
+
+
+
+\begin{document}
+\begin{center}
+\textbf{\large DMA 2018 \\[0.5em] --Ugeopgave 5 -- \\[0.5em]}
+\end{center}
+
+\begin{itemize}
+\item Hele ugeopgaven skal besvares.
+\item Ugeopgaven skal afleveres mandag den 8. oktober klokken 21:59 pŒ Absalon.
+\item Ugeopgaven skal laves i \textbf{grupper} af 3-4 personer.
+\item Besvarelsen skal udarbejdes i \LaTeX.
+\end{itemize}
+
+
+\begin{enumerate}[Del 1]
+\item NŒr vi benytter Euklids algoritme pŒ to tal $a,b$ for at bestemme $\GCD(a,b)$ foretager vi et antal divisioner med rest indtil vi opnŒr resten $0$ og dermed har bestemt den st¿rste f¾lles divisor som den n¾stsidst beregnede rest. Vi vil sige at antallet af \textbf{trin} der skal benyttes er antallet af divisioner. SŒledes er antallet af trin der skal benyttes for at bestemme $\GCD(273,98)$ netop 5, jf.\ gennemregningen i KBR Example 1.4.5 (side 23). Antallet af trin for alle valg af $a,b$ med $15\geq a\geq b>0$ -- pŒ n¾r to sŒdanne valg -- er illustreret i figur \ref{antaltrin}.
+\begin{enumerate}[(1)]
+\item Beregn $\GCD(3,2), \GCD (5,3), \GCD (8,5)$, samt $\GCD(13,8)$ og
+  bestem de fire manglende tal i figur \ref{antaltrin}.
+
+\item Lad $t_n$ v¾re det h¿jeste (worst-case) antal trin der skal benyttes til at bestemme $\GCD(a,b)$ nŒr $n\geq a\geq b>0$. Benyt figur \ref{antaltrin} til at bestemme $t_1,t_2,\dots,t_{15}$.
+\item For $k=2,3,4,5,6$, find par $(a_k,b_k)$ sŒledes hver
+  $\GCD(a_k,b_k)$ har netop $k$ divisioner, og $\max\{a_k,b_k\}$
+  bliver mindst muligt. \textit{Hint: Du kan med fordel benytte tabel
+    i Figur~\ref{antaltrin}}. Du kan antage at $(a_6,b_6)=(21,13)$.
+\item \textit{(Frivillig -- man beh¿ves ikke at lave denne opgave)}
+  Kan du indse m¿nstret og forudsige $(a_7,b_7)$ og $(a_8,b_8)$?
+Derefter, overvej f¿lgen defineret som $F_0=1$, $F_1=2$, og
+$F_k=\max\{a_k,b_k\}$ for $k>1$. Kan du genkende f¿lgen $(F_k)$ fra
+forel¾sningen? Hvad hedder den?
+\item Vis at $t_n$ er $O(n)$. \textit{Note: grafen for $t_n$ for $n$
+    mellem 1 og 200 er illustreret pŒ figur \ref{vaekst}. Bem¾rk, ud
+    fra grafen sŒ ser $t_n$ ud ikke som $\Theta(n)$.}
+\item Giv en begrundelse for at $t_n$ ikke er $O(1)$.
+\end{enumerate}
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+\item
+ Benyt  f¿lgende opskrift
+  til at give et induktionsbevis for at  $4^{n} + 15n - 1$ er deleligt med $9$ for ethvert helt tal $n>0$.
+\begin{enumerate}[(1)]\item Bestem det relevante udsagn $P(n)$.
+\item Kontrollr at $P(n)$ er et sandt udsagn for alle $n$ mellem $1$
+og $5$.
+\item Indf¿r en f¿lge $b_n = 4^{n} + 15n  -1$, og lav en formel der
+  sammenknytter $b_{n+1}$ og $b_{n}$
+\item Antag nu at $P(n)$ er sand for en eller anden bestemt v¾rdi af $n>0$. G¿r rede for at sŒ er $P(n+1)$ ogsŒ sand.
+\item Opstil en  konklusion ved hj¾lp af induktionsprincippet.
+\end{enumerate}
+\end{enumerate}
+\newpage
+
+
+
+\begin{figure}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
+&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15\\\hline\hline
+1&1&1&1&1&1&1&1&1&1&1&1&1&1&1&1\\\hline
+2&&1&&1&2&1&2&1&2&1&2&1&2&1&2\\\hline
+3&&&1&2&&1&2&3&1&2&3&1&2&3&1\\\hline
+4&&&&1&2&2&3&1&2&2&3&1&2&2&3\\\hline
+5&&&&&1&2&3&&3&1&2&3&4&3&1\\\hline
+6&&&&&&1&2&2&2&3&3&1&2&2&2\\\hline
+7&&&&&&&1&2&3&3&4&4&3&1&2\\\hline
+8&&&&&&&&1&2&2&4&2& &3&3\\\hline
+9&&&&&&&&&1&2&3&2&3&4&3\\\hline
+10&&&&&&&&&&1&2&2&3&3&2\\\hline
+11&&&&&&&&&&&1&2&3&4&4\\\hline
+12&&&&&&&&&&&&1&2&2&2\\\hline
+13&&&&&&&&&&&&&1&2&3\\\hline
+14&&&&&&&&&&&&&&1&2\\\hline
+15&&&&&&&&&&&&&&&1\\\hline
+\end{tabular}
+\end{center}
+\caption{Antal trin i beregningen af $\GCD(a,b)$}\label{antaltrin}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.45\textwidth, trim=2.5cm 12cm 5cm 2cm, clip=true]{vaekst}
+\end{center}
+\caption{Grafen for $t_n$} \label{vaekst}
+\end{figure}
+\end{document}

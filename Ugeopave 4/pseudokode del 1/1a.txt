@@ -1,0 +1,53 @@
+"""
+Lad S være en sorteret liste af tal repræsenteret ved 
+hjælp af en dobbelthægtet liste (eng. double linked list). 
+Målet med denne delopgave er at vedligeholde S når nye tal
+indsættes i S, således at S fortsat er sorteret.
+
+'Beskriv hvilke felter (eng. attributter) en knude 
+(eng. object/node) i listen S skal indeholde.'
+
+Et knudeobjekt har 3 felter: Key, next og prev. Key er et heltal, next
+og prev er pegere som peger på henholdsvist næste og forrige objekt i S.
+
+    Alle noder skal indeholde tre celler, da listen S
+    er en doubly linked list. 
+
+    Alle noders første celle skal indeholde en addresse-
+    pointer til forrige nodes sidste celle. 
+    Alle noders anden celle skal indeholde data, i dette
+    tilfælde en key (integer)
+    Alle noders tredje celle skal indeholde en addresse-
+    pointer til næste nodes første celle.
+
+    head (S.head) og tale (S.tale) noderne har ingen 
+    addresse-pointers i henholdsvist første og trejde celle.
+    I stedet er disse celler tomme og indeholder en nil-værdi.
+
+    o1[NIL, 10, o2] <-> 
+    o2[o1,  20, o3] <->
+    o3[o2,  30, NIL]
+
+"""
+
+
+""" DEL 1A, b
+
+'Lav pseudokode der givet et heltal z, opretter en liste med dette 
+ene tal.' (heltal = positive og negative tal inkl. 0)
+
+madeNode(z)
+ node = new Node{prev = nil, key = z, next = nil}
+ return node
+
+makeList(z)
+ S = new List{head = makeNode(z)}
+ return S
+
+// Test for z = 2
+makeList(2)
+
+"""
+
+
+

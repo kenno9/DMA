@@ -1,0 +1,66 @@
+Del 1)
+
+a) I skal bare sige hvilke felter i godt kunne tænke jer at bruge: F.eks.
+
+Et listeobjekt S har et head felt og et tail felt, som er pegere der bør pege på hhv. første og sidste
+knude i S.
+Et knudeobjekt har 3 felter: key, next og prev. Key er et heltal, og next og prev er pegere som
+bør pege på hhv. næste og forrige objekt i S.
+
+I koden glemmer i at lave et knude-objekt, som z skal pakkes ind i !
+S.head findes ikke automatisk. Så i burde have noget lign:
+
+madeNode(z)
+ node = new Node{key = z, next = nil, prev = nil}
+ return node
+
+makeList(z)
+ S = new List{head = makeNode(z)}
+ return S
+
+I returnerer heller ikke listeobjektet, hvilket i burde, men S.head.
+
+b) Det er nice i kommenterer koden, men i behøver ikke kommentere hver linje. Bare de overordnede strukture i koden!
+
+Hvis listen er tom, skal i sætte newNode objektet ind som første objekt!
+Og hvis i når til enden at listen skal i heller ikke bare stoppe, men indsætte newNode til sidst i listen!
+
+I er på vej mod noget der er rigtigt, men der er et par problemer med koden som den er nu.
+ Først og fremmest vil jeres loop altid kun køre EN gang.. Hvis vi da antager at den stopper efter print "success".
+Hvis vi ikke gør det, så er problemet at newNode vil blive sat ind i mellem samtlige knuder i listen! Måske
+er jeres indentering fejlet. Men bemærk at sålænge temp1.next != NIL, så vil newNode blive sat ind. Så i tjekker rent faktisk
+ikke om i er det rigtige sted.
+
+Et andet problem er at vi mener listen er sorteret fra mindst til størst. Derfor ville jeres while condition:
+newNode.key < temp1.key
+ikke virke - uanset om de ovenstående problemer ikke var der! Uligheden skal vendes. Selv hvis i ville,
+gøre det med en omvendt sorteret liste er der en lille fejl, idet newNode da skulle stå mellem temp1.prev og temp1 istedet.
+ Men i har helt klart den rigtige idé. Der er blot
+et par detajler som ødelægger det lidt.
+
+
+c) jeps
+d) I skal ikke skrive noget kode her. Bare argumenterer for at den tilgang som er beskrevet vil have køretid O(n²)!
+(Som i ganske rigtigt gør til sidst).
+e) Den minder nu mere om insertionSort. (Fordi det ER insertionSort! :D)
+
+Del 2)
+
+a)  Helt korrekt!
+b) Husk at x ikke findes i listen S allerede. Og når i vil sammenligne skal i skrive:
+
+b.pa.key < x
+
+Dog er der her samme problem som ovenover. Det burde være b.pa.key > x eller lign. da vi sorterer ting fra mindst til størst!
+Der er heller ikke nogle S.nil eller B.nil værdier. Bare brug NIL eller NULL etc! 
+
+Men tror i har den rigtige idé til hvordan B skal bruges til at indsætte i S. Det kikser bare lige med at få koden
+til at være helt korrekt. Husk at i også burde argumentere for hvorfor køretiden bliver det som er krævet!
+c)
+d)
+
+
+****************
+
+Fin oppgave! Tror i mener det rigtige i begge kode-opgaver. Problemet bare manglende erfaring med at skrive kode.
+Prøv at ret Del 1) b) og Del 2) b). Spørg ENDELIG mig til øvelserne hvis har nogen spørgsmål!

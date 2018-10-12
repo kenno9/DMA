@@ -1,0 +1,26 @@
+function makeNode(val)
+  node = new Node{prev = NIL, key = val, next = NIL}
+  return node
+
+function SearchAndInsert(S, z)
+
+	newNode = makeNode(z)
+
+	temp1 = S.head
+	temp2 = ''
+	
+	while newNode.key < temp1.key do
+
+		if temp1.next == NIL then
+			printfn "WE REACHED THE END"
+			return -1
+		else
+			temp1 = temp1.next
+	
+	temp2 = temp1.next
+	temp1.next = newNode
+	newNode.prev = temp1
+	newNode.next = temp2
+	temp2.prev = newNode
+
+	printfn "Success!
